@@ -41,10 +41,10 @@ const Home: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                variant="hero" 
+                variant="glossy" 
                 size="lg" 
                 asChild
-                className="shadow-glow hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               >
                 <Link to="/lessons" className="flex items-center space-x-2">
                   <BookOpen className="w-5 h-5" />
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
               </Button>
               
               {nativeLanguage === 'en' && (
-                <Button variant="glass" size="lg" asChild>
+                <Button variant="premium" size="lg" asChild>
                   <Link to="/language-select" className="flex items-center space-x-2">
                     <Sparkles className="w-5 h-5" />
                     <span>{t('selectLanguage')}</span>

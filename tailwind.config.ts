@@ -24,33 +24,35 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				glass: {
-					DEFAULT: 'hsl(var(--glass))',
-					border: 'hsl(var(--glass-border))',
-					foreground: 'hsl(var(--glass-foreground))'
+				surface: {
+					DEFAULT: 'hsl(var(--surface))',
+					elevated: 'hsl(var(--surface-elevated))',
+					border: 'hsl(var(--surface-border))',
+					foreground: 'hsl(var(--surface-foreground))'
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					glow: 'hsl(var(--primary-glow))',
+					hover: 'hsl(var(--primary-hover))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					glow: 'hsl(var(--secondary-glow))',
+					hover: 'hsl(var(--secondary-hover))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
 				success: {
 					DEFAULT: 'hsl(var(--success))',
-					glow: 'hsl(var(--success-glow))',
+					hover: 'hsl(var(--success-hover))',
 					foreground: 'hsl(var(--success-foreground))'
 				},
 				warning: {
 					DEFAULT: 'hsl(var(--warning))',
-					glow: 'hsl(var(--warning-glow))',
+					hover: 'hsl(var(--warning-hover))',
 					foreground: 'hsl(var(--warning-foreground))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
+					hover: 'hsl(var(--destructive-hover))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
 				muted: {
@@ -73,15 +75,15 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-success': 'var(--gradient-success)',
-				'gradient-glass': 'var(--gradient-glass)',
+				'gradient-surface': 'var(--gradient-surface)',
 				'gradient-hero': 'var(--gradient-hero)',
 			},
 			boxShadow: {
-				'glass': 'var(--shadow-glass)',
-				'glow': 'var(--shadow-glow)',
-				'success': 'var(--shadow-success)',
-				'hover': 'var(--shadow-hover)',
+				'sm': 'var(--shadow-sm)',
+				'DEFAULT': 'var(--shadow)',
+				'md': 'var(--shadow-md)',
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -92,19 +94,13 @@ export default {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' }
 				},
-				'bounce-in': {
-					'0%': { transform: 'scale(0.3)', opacity: '0' },
-					'50%': { transform: 'scale(1.05)' },
-					'70%': { transform: 'scale(0.9)' },
-					'100%': { transform: 'scale(1)', opacity: '1' }
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
 				'slide-up': {
 					'0%': { transform: 'translateY(100%)', opacity: '0' },
 					'100%': { transform: 'translateY(0)', opacity: '1' }
-				},
-				'glow-pulse': {
-					'0%, 100%': { opacity: '1' },
-					'50%': { opacity: '0.5' }
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
@@ -114,9 +110,8 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'bounce-in': 'bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'fade-in': 'fade-in 0.3s ease-out',
 				'slide-up': 'slide-up 0.5s ease-out',
-				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
 				'float': 'float 3s ease-in-out infinite'
 			}
 		}

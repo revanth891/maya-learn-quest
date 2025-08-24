@@ -303,7 +303,7 @@ const Leaderboard: React.FC = () => {
                 <div className="text-muted-foreground">Active learners</div>
               </div>
             </div>
-            <Button variant="gaming" size="lg" className="mt-4">
+            <Button variant="glossy" size="lg" className="mt-4">
               <Trophy className="w-4 h-4 mr-2" />
               Join Competition
             </Button>

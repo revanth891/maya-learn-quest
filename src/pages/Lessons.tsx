@@ -331,7 +331,7 @@ const LessonCard: React.FC<{ lesson: Lesson }> = ({ lesson }) => {
             <span>{lesson.exercises} exercises</span>
           </div>
           
-          <Button variant="gaming" size="sm" asChild>
+          <Button variant="glossy" size="sm" asChild>
             <Link to={`/lessons/${lesson.id}`} className="flex items-center space-x-1">
               <Play className="w-3 h-3" />
               <span>Start</span>

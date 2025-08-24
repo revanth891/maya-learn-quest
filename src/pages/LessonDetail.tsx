@@ -386,7 +386,7 @@ const LessonDetail: React.FC = () => {
                       <Button
                         onClick={() => handleAnswer(exerciseAnswer)}
                         disabled={!exerciseAnswer.trim()}
-                        variant="gaming"
+                        variant="glossy"
                       >
                         Submit Answer
                       </Button>
