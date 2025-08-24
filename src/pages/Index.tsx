@@ -1,14 +1,19 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Home from './Home';
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if user has selected a language
+    const savedLanguage = localStorage.getItem('mayaquest-language');
+    if (!savedLanguage) {
+      navigate('/language-select');
+    }
+  }, [navigate]);
+
+  return <Home />;
 };
 
 export default Index;
