@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useGame } from '@/contexts/GameContext';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { Home, BookOpen, User, Settings, Trophy, Zap } from 'lucide-react';
 
 const Navigation: React.FC = () => {
@@ -69,6 +70,7 @@ const Navigation: React.FC = () => {
                 {t('level')} {level}
               </span>
             </div>
+            <ThemeToggle />
           </div>
         </div>
       </div>

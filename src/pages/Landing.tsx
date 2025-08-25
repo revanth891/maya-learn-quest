@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import Maya3D from '@/components/Maya3D';
 import { ArrowRight, BookOpen, Users, Trophy, Sparkles, Globe, Zap, Star, Play } from 'lucide-react';
 
@@ -52,6 +53,7 @@ const Landing = () => {
               <span className="text-xl font-bold text-foreground">MayaQuest</span>
             </div>
             <div className="flex items-center space-x-4">
+              <ThemeToggle />
               <Button variant="ghost" asChild>
                 <Link to="/app">Open App</Link>
               </Button>

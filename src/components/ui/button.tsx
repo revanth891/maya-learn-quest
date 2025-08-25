@@ -15,9 +15,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary-hover shadow-sm hover:shadow-md",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        glossy: "bg-gradient-primary text-primary-foreground shadow-lg hover:shadow-xl border-0 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/10 before:to-white/20 before:opacity-0 hover:before:opacity-100 before:transition-opacity",
+        glossy: "bg-gradient-primary text-primary-foreground shadow-lg hover:shadow-xl border-0 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:opacity-70 hover:before:opacity-100 before:transition-all before:duration-300 after:absolute after:inset-0 after:bg-gradient-to-br after:from-white/10 after:to-transparent after:opacity-50",
         success: "bg-success text-success-foreground hover:bg-success-hover shadow-sm hover:shadow-md",
-        premium: "bg-surface-elevated text-surface-foreground border border-surface-border hover:bg-accent hover:text-accent-foreground shadow-md hover:shadow-lg backdrop-blur-sm",
+        premium: "bg-surface-elevated text-surface-foreground border border-surface-border hover:bg-accent hover:text-accent-foreground shadow-lg hover:shadow-xl backdrop-blur-sm relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/5 before:to-white/10 before:opacity-60 hover:before:opacity-100 before:transition-all before:duration-300",
         clean: "bg-white text-foreground border border-border hover:bg-surface shadow-sm hover:shadow-md",
       },
       size: {
