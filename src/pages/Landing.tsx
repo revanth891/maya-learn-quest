@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { ThemeToggle } from '@/components/ThemeToggle';
-import Maya3D from '@/components/Maya3D';
+import { Button } from '../components/ui/button';
+import { ThemeToggle } from '../components/ThemeToggle';
+import { FeatureCard } from '../components/ui/feature-card';
+import { StatCard } from '../components/ui/stat-card';
+import { MayaContainer } from '../components/ui/maya-container';
+import { GlassCard } from '../components/ui/glass-card';
 import { ArrowRight, BookOpen, Users, Trophy, Sparkles, Globe, Zap, Star, Play } from 'lucide-react';
 
 const Landing = () => {
@@ -40,17 +42,17 @@ const Landing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background grain relative">
+    <div className="min-h-screen bg-gradient-surface grain relative">
       {/* Hero Section */}
       <section className="relative px-4 pt-16 pb-20">
         <div className="max-w-7xl mx-auto">
           {/* Navigation */}
           <nav className="flex items-center justify-between mb-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
+            <div className="flex items-center space-x-2 group">
+              <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center animate-glow-pulse group-hover:scale-110 transition-transform">
                 <span className="text-sm font-bold text-primary-foreground">M</span>
               </div>
-              <span className="text-xl font-bold text-foreground">MayaQuest</span>
+              <span className="text-xl font-bold text-foreground group-hover:scale-105 transition-transform">MayaQuest</span>
             </div>
             <div className="flex items-center space-x-4">
               <ThemeToggle />
@@ -69,7 +71,7 @@ const Landing = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center space-x-2 bg-surface-elevated border border-surface-border rounded-full px-4 py-2">
+                <div className="inline-flex items-center space-x-2 glass backdrop-blur-xl border border-white/20 rounded-full px-4 py-2">
                   <Star className="w-4 h-4 text-warning" />
                   <span className="text-sm font-medium text-muted-foreground">
                     #1 AI English Learning Platform
@@ -105,41 +107,31 @@ const Landing = () => {
               {/* Quick Stats */}
               <div className="grid grid-cols-4 gap-4 pt-8">
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-2xl font-bold text-foreground">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </div>
+                  <StatCard 
+                    key={index}
+                    number={stat.number}
+                    label={stat.label}
+                  />
                 ))}
               </div>
             </div>
 
             {/* 3D Maya Showcase */}
             <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-20"></div>
-                <Card className="relative p-8 card-premium">
-                  <Maya3D 
-                    height="400px" 
-                    showMessage={true}
-                    message="Hello! I'm Maya, your AI English tutor. Ready to start your learning journey?"
-                    className="animate-float"
-                  />
-                </Card>
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-surface-elevated border border-surface-border rounded-full px-4 py-2 shadow-md">
-                    <span className="text-sm font-medium text-foreground">
-                      Maya - Your AI Learning Companion
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <MayaContainer
+                variant="hero"
+                height="400px"
+                showMessage={true}
+                message="Hello! I'm Maya"
+                className="animate-float"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="px-4 py-20 bg-surface">
+      <section className="px-4 py-20 bg-gradient-to-b from-transparent to-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -155,21 +147,13 @@ const Landing = () => {
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <Card key={index} className="p-8 card-premium hover:shadow-lg transition-all duration-200">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
-                        {feature.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
+                <FeatureCard
+                  key={index}
+                  title={feature.title}
+                  description={feature.description}
+                  icon={<Icon className="w-6 h-6" />}
+                  variant="vibrant"
+                />
               );
             })}
           </div>
@@ -179,9 +163,9 @@ const Landing = () => {
       {/* CTA Section */}
       <section className="px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <Card className="p-12 card-premium">
+          <GlassCard variant="vibrant" className="p-12">
             <div className="space-y-6">
-              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto animate-glow-pulse">
                 <Zap className="w-8 h-8 text-primary-foreground" />
               </div>
               
@@ -195,30 +179,30 @@ const Landing = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Button variant="glossy" size="xl" onClick={() => navigate('/app')}>
+                <Button variant="glossy" size="xl" onClick={() => navigate('/app')} className="hover:scale-105 transition-transform">
                   <BookOpen className="w-5 h-5 mr-2" />
                   Start Your Journey
                 </Button>
-                <Button variant="premium" size="xl" asChild>
+                <Button variant="premium" size="xl" asChild className="hover:scale-105 transition-transform">
                   <Link to="/app">
                     Learn More
                   </Link>
                 </Button>
               </div>
             </div>
-          </Card>
+          </GlassCard>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="px-4 py-12 bg-surface border-t border-surface-border">
+      <footer className="px-4 py-12 glass border-t border-white/20 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-6 h-6 bg-gradient-primary rounded-full flex items-center justify-center">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0 group">
+              <div className="w-6 h-6 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="text-xs font-bold text-primary-foreground">M</span>
               </div>
-              <span className="font-semibold text-foreground">MayaQuest</span>
+              <span className="font-semibold text-foreground group-hover:scale-105 transition-transform">MayaQuest</span>
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">

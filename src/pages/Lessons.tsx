@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import Navigation from '@/components/Navigation';
-import Maya3D from '@/components/Maya3D';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useGame } from '@/contexts/GameContext';
+import { Button } from '../components/ui/button';
+import { Card } from '../components/ui/card';
+import { Progress } from '../components/ui/progress';
+import Navigation from '../components/Navigation';
+import Maya3D from '../components/Maya3D';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useGame } from '../contexts/GameContext';
 import { BookOpen, Star, Lock, Play, Trophy, Zap } from 'lucide-react';
 
 interface Lesson {
@@ -179,7 +179,6 @@ const Lessons: React.FC = () => {
               height="300px" 
               showMessage={true}
               message="Ready to learn? Pick a lesson that matches your level!"
-              scale={0.8}
             />
           </div>
         </div>

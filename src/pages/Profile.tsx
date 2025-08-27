@@ -1,11 +1,11 @@
 import React from 'react';
-import { Card } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
-import Navigation from '@/components/Navigation';
-import Maya3D from '@/components/Maya3D';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useGame } from '@/contexts/GameContext';
+import { Card } from '../components/ui/card';
+import { Progress } from '../components/ui/progress';
+import { Badge } from '../components/ui/badge';
+import Navigation from '../components/Navigation';
+import Maya3D from '../components/Maya3D';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useGame } from '../contexts/GameContext';
 import { User, Trophy, Target, Calendar, Award, Zap, TrendingUp, Star } from 'lucide-react';
 
 const Profile: React.FC = () => {
@@ -98,7 +98,6 @@ const Profile: React.FC = () => {
               height="300px" 
               showMessage={true}
               message={`Amazing progress! You're at level ${level} with ${points} Integration Points!`}
-              scale={0.8}
             />
           </div>
         </div>

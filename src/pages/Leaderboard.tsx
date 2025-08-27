@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Navigation from '@/components/Navigation';
-import Maya3D from '@/components/Maya3D';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useGame } from '@/contexts/GameContext';
+import { Card } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Badge } from '../components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import Navigation from '../components/Navigation';
+import Maya3D from '../components/Maya3D';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useGame } from '../contexts/GameContext';
 import { Trophy, Medal, Award, Crown, Zap, TrendingUp, Users, Calendar } from 'lucide-react';
 
 interface LeaderboardUser {
@@ -224,7 +224,6 @@ const Leaderboard: React.FC = () => {
               height="300px" 
               showMessage={true}
               message={`You're ranked #${currentUserPosition}! Keep learning to climb higher!`}
-              scale={0.8}
             />
           </div>
         </div>
