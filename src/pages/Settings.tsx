@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import Navigation from '@/components/Navigation';
-import { useLanguage, type Language } from '@/contexts/LanguageContext';
-import { initializeOpenAI, isOpenAIConfigured } from '@/services/openai';
-import { useToast } from '@/hooks/use-toast';
+import { Button } from '../components/ui/button';
+import { Card } from '../components/ui/card';
+import { Input } from '../components/ui/input';
+import { Label } from '../components/ui/label';
+import { Switch } from '../components/ui/switch';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import Navigation from '../components/Navigation';
+import { useLanguage, type Language } from '../contexts/LanguageContext';
 import { Settings as SettingsIcon, Key, Bell, Volume2, Globe, Save, Eye, EyeOff } from 'lucide-react';
 
 const Settings: React.FC = () => {
   const { t, language, setLanguage } = useLanguage();
-  const { toast } = useToast();
   const [apiKey, setApiKey] = useState('');
   const [showApiKey, setShowApiKey] = useState(false);
   const [notifications, setNotifications] = useState(true);
@@ -41,32 +38,19 @@ const Settings: React.FC = () => {
     setIsLoading(true);
     
     try {
-      // Save API key and initialize OpenAI service
+      // Save API key
       if (apiKey) {
         localStorage.setItem('mayaquest-openai-key', apiKey);
-        initializeOpenAI(apiKey);
-        toast({
-          title: "API Key Saved",
-          description: "OpenAI integration is now active for AI-powered lessons!",
-          variant: "default"
-        });
+        alert("API Key Saved! OpenAI integration is now active for AI-powered lessons!");
       }
 
       // Save other settings
       localStorage.setItem('mayaquest-notifications', notifications.toString());
       localStorage.setItem('mayaquest-sound-effects', soundEffects.toString());
 
-      toast({
-        title: "Settings Saved",
-        description: "Your preferences have been updated successfully.",
-        variant: "default"
-      });
+      alert("Settings saved successfully!");
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to save settings. Please try again.",
-        variant: "destructive"
-      });
+      alert("Failed to save settings. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -128,7 +112,7 @@ const Settings: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <p className="text-xs text-muted-foreground">
-                    Status: {isOpenAIConfigured() ? (
+                    Status: {apiKey ? (
                       <span className="text-success">✓ Connected</span>
                     ) : (
                       <span className="text-warning">⚠ Not configured</span>

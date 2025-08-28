@@ -24,11 +24,11 @@ interface Exercise {
 class OpenAIService {
   private apiKey: string;
   private model: string;
-  private baseUrl = 'https://api.openai.com/v1';
+  private baseUrl = 'https://api.intelligence.io.solutions/api/v1/';
 
   constructor(config: OpenAIConfig) {
     this.apiKey = config.apiKey;
-    this.model = config.model || 'gpt-4';
+    this.model = config.model || 'meta-llama/Llama-3.3-70B-Instruct';
   }
 
   async generateLesson(
@@ -176,9 +176,59 @@ class OpenAIService {
   }
 
   private getFallbackFeedback(isCorrect: boolean): string {
-    return isCorrect 
+    return isCorrect
       ? "Great job! You're making excellent progress in your English learning journey!"
       : "Don't worry, mistakes help us learn! Keep practicing and you'll improve quickly.";
+  }
+  
+  async generateBlogContent(
+    topic: string,
+    difficulty: 'beginner' | 'intermediate' | 'advanced' = 'intermediate'
+  ): Promise<string> {
+    const prompt = `Generate an engaging blog post about ${topic}. Write it in HTML format with proper structure including headings, paragraphs, and appropriate styling classes that match our UI. The content should be informative, well-structured, and approximately 800-1000 words. Include an image placeholder with the src="/placeholder.svg" and appropriate alt text.`;
+    
+    try {
+      const response = await fetch(`${this.baseUrl}/chat/completions`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: this.model,
+          messages: [
+            {
+              role: 'system',
+              content: 'You are a content generator that creates blog posts in HTML format. Return ONLY the HTML content without any additional text or explanation.'
+            },
+            {
+              role: 'user',
+              content: prompt
+            }
+          ],
+          temperature: 0.7,
+          max_tokens: 1500
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`OpenAI API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.choices[0].message.content;
+    } catch (error) {
+      console.error('Error generating blog content:', error);
+      return this.getFallbackBlogContent(topic);
+    }
+  }
+
+  private getFallbackBlogContent(topic: string): string {
+    return `
+      <h1 class="text-3xl font-bold mb-6">${topic} Overview</h1>
+      <p class="mb-4">Content for ${topic} is currently being loaded. Please refresh the page.</p>
+      <p class="mb-4">The United Kingdom has a rich and diverse ${topic.toLowerCase()} that has evolved over centuries.</p>
+    `;
   }
 }
 

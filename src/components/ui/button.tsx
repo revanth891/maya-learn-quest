@@ -2,7 +2,7 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.98]",
@@ -16,8 +16,10 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         glossy: "bg-gradient-primary text-primary-foreground shadow-lg hover:shadow-xl border-0 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:opacity-70 hover:before:opacity-100 before:transition-all before:duration-300 after:absolute after:inset-0 after:bg-gradient-to-br after:from-white/10 after:to-transparent after:opacity-50",
+        gradient: "bg-gradient-primary text-primary-foreground shadow-lg hover:shadow-xl border-0 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/20 before:to-white/40 before:opacity-70 hover:before:opacity-100 before:transition-all before:duration-300 after:absolute after:inset-0 after:bg-gradient-to-br after:from-white/10 after:to-transparent after:opacity-50",
         success: "bg-success text-success-foreground hover:bg-success-hover shadow-sm hover:shadow-md",
         premium: "bg-surface-elevated text-surface-foreground border border-surface-border hover:bg-accent hover:text-accent-foreground shadow-lg hover:shadow-xl backdrop-blur-sm relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-transparent before:via-white/5 before:to-white/10 before:opacity-60 hover:before:opacity-100 before:transition-all before:duration-300",
+          glass: "glass text-glass-foreground",
         clean: "bg-white text-foreground border border-border hover:bg-surface shadow-sm hover:shadow-md",
       },
       size: {

@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+		  fontFamily: {
+		    sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+		  },
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -85,6 +88,16 @@ export default {
 				'lg': 'var(--shadow-lg)',
 				'xl': 'var(--shadow-xl)',
 			},
+			backdropBlur: {
+				xs: '2px',
+				sm: '4px',
+				DEFAULT: '8px',
+				md: '12px',
+				lg: '16px',
+				xl: '24px',
+				'2xl': '40px',
+				'3xl': '64px',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
@@ -116,5 +129,18 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+	  require("tailwindcss-animate"),
+	  // Glassmorphism utility: translucent background with backdrop blur
+	  ({ addUtilities }: any) => {
+	    const glassUtilities = {
+	      ".glass": {
+	        "background": "hsl(var(--surface-elevated) / 0.3)",
+	        "backdrop-filter": "blur(12px)",
+	        "border": "1px solid hsl(var(--surface-border) / 0.3)",
+	      },
+	    };
+	    addUtilities(glassUtilities, ["responsive", "hover"]);
+	  },
+	],
 } satisfies Config;
