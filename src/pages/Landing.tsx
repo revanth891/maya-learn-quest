@@ -118,14 +118,24 @@ const Landing = () => {
 
             {/* 3D Maya Showcase */}
             <div className="flex justify-center lg:justify-end">
-              <MayaContainer
-                variant="hero"
-                height="400px"
-                showMessage={true}
-                message="Hello! I'm Maya"
-                className="animate-float"
-              />
-            </div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-20"></div>
+                <Card className="relative p-8 card-premium">
+                  <Maya3D 
+                    height="400px" 
+                    showMessage={true}
+                    message="Hello! I'm Maya, your AI English tutor. Ready to start your learning journey?"
+                    className="animate-float"
+                  />
+                </Card>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-surface-elevated border border-surface-border rounded-full px-4 py-2 shadow-md">
+                    <span className="text-sm font-medium text-foreground">
+                      Maya - Your AI Learning Companion
+                    </span>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </section>
