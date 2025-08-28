@@ -15,6 +15,8 @@ import UKCulturePage from './pages/uk/Culture';
 import UKPoliticsPage from './pages/uk/Politics';
 import UKEconomicsPage from './pages/uk/Economics';
 import UKNormsPage from './pages/uk/Norms';
+import LanguageSelection from "./pages/LanguageSelection";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -36,7 +38,7 @@ const AppContent = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/settings" element={<Settings />} />
-          
+          <Route path="/language-select" element={<LanguageSelection />} />
           {/* UK Learning Routes */}
           <Route path="/uk/history" element={<UKHistoryPage />} />
           <Route path="/uk/culture" element={<UKCulturePage />} />
@@ -45,7 +47,7 @@ const AppContent = () => {
           <Route path="/uk/norms" element={<UKNormsPage />} />
           
           {/* Fallback route - redirect to home instead of landing */}
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
