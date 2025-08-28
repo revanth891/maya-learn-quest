@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import Maya3D from '@/components/Maya3D';
-import { useLanguage, type Language } from '@/contexts/LanguageContext';
+import { Button } from '../components/ui/button';
+import { Card } from '../components/ui/card';
+import Maya3D from '../components/Maya3D';
+import { useLanguage, type Language } from '../contexts/LanguageContext';
 import { ArrowLeft, Globe } from 'lucide-react';
 
 const LanguageSelection: React.FC = () => {
