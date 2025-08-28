@@ -7,6 +7,7 @@ import { StatCard } from '../components/ui/stat-card';
 import { MayaContainer } from '../components/ui/maya-container';
 import { GlassCard } from '../components/ui/glass-card';
 import { Card } from '../components/ui/card';
+import Maya3D from '../components/Maya3D';
 import { ArrowRight, BookOpen, Users, Trophy, Sparkles, Globe, Zap, Star, Play } from 'lucide-react';
 
 const Landing = () => {
