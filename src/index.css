@@ -286,3 +286,9 @@
 .border-border { border-color: hsl(var(--border)); }
 .border-white\/10 { border-color: rgb(255 255 255 / 0.1); }
 .border-white\/20 { border-color: rgb(255 255 255 / 0.2); }
+
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
