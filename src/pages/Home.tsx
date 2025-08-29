@@ -8,6 +8,8 @@ import { MayaContainer } from '../components/ui/maya-container';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useGame } from '../contexts/GameContext';
 import { BookOpen, Target, CalendarDays, Award, Sparkles, ArrowRight } from 'lucide-react';
+import { Card } from '../components/ui/card';
+import Maya3D from '../components/Maya3D';
 
 const Home: React.FC = () => {
   const { t, nativeLanguage } = useLanguage();
@@ -66,13 +68,14 @@ const Home: React.FC = () => {
 
           {/* Maya 3D Mascot */}
           <div className="flex justify-center lg:justify-end">
-            <MayaContainer
-              variant="floating"
-              height="400px"
-              showMessage={true}
-              message={points > 0 ? "Welcome back! Ready for more English?" : "Hello! I'm Maya, your AI English tutor!"}
-              className="animate-float"
-            />
+          <Card className="relative p-4 card-premium w-[550px] h-[550px] lg:w-[650px] lg:h-[650px] flex items-center justify-center">
+                  <Maya3D 
+                    height="100%" 
+                    showMessage={true}
+                    message="Hello! I'm Maya, your AI English tutor. Ready to start your learning journey?"
+                    className="w-full h-full"
+                  />
+                </Card>
           </div>
         </div>
       </section>

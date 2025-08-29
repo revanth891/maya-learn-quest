@@ -106,14 +106,16 @@ const LanguageSelection: React.FC = () => {
           </div>
 
           {/* Maya 3D Mascot */}
-          <div className="flex justify-center">
+          <div className="flex justify">
             <div className="relative">
-              <Maya3D 
-                height="400px" 
-                showMessage={true}
-                message="Hello! Which language would you like to learn English in?"
-                className="animate-float"
-              />
+            <Card className="relative p-4 card-premium w-[550px] h-[550px] lg:w-[650px] lg:h-[650px] flex items-center justify-center">
+                  <Maya3D 
+                    height="100%" 
+                    showMessage={true}
+                    message="Hello! I'm Maya, your AI English tutor. Ready to start your learning journey?"
+                    className="w-full h-full"
+                  />
+                </Card>
               <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
                 <div className="bg-glass/80 backdrop-blur-sm rounded-full px-4 py-2 border border-glass-border animate-bounce-in">
                   <span className="text-sm font-medium text-glass-foreground">

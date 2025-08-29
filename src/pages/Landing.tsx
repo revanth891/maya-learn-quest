@@ -130,6 +130,13 @@ const Landing = () => {
                     className="w-full h-full"
                   />
                 </Card>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
+                <div className="bg-glass/80 backdrop-blur-sm rounded-full px-4 py-2 border border-glass-border animate-bounce-in">
+                  <span className="text-sm font-medium text-glass-foreground">
+                    Maya is here to help!
+                  </span>
+                </div>
+              </div>
 
               </div>
             </div>
