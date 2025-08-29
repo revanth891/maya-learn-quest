@@ -47,7 +47,7 @@ const AppContent = () => {
           <Route path="/uk/norms" element={<UKNormsPage />} />
           
           {/* Fallback route - redirect to home instead of landing */}
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
