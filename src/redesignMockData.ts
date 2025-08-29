@@ -1,4 +1,4 @@
-// Mock data for the redesigned MayaQuest interface
+// Mock data for the redesigned MayaCode-Quest interface
 
 // Data for global state store
 export const mockStore = {

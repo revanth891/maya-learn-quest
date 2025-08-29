@@ -37,7 +37,7 @@
 //               <span className="text-sm font-bold text-primary-foreground">M</span>
 //             </div>
 //             <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:scale-105 transition-transform">
-//               MayaQuest
+//               MayaCode-Quest
 //             </span>
 //           </Link>
 
@@ -180,7 +180,7 @@ const Navigation: React.FC = () => {
                 <span className="text-sm font-bold text-primary-foreground">M</span>
               </div>
               <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent group-hover:scale-105 transition-transform">
-                MayaQuest
+                MayaCode-Quest
               </span>
             </Link>
 

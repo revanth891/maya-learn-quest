@@ -159,7 +159,7 @@
 //         <div className="max-w-7xl mx-auto">
 //           <div className="text-center mb-10 sm:mb-16">
 //             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-//               Why Choose MayaQuest?
+//               Why Choose MayaCode-Quest?
 //             </h2>
 //             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
 //               Advanced AI technology meets proven learning methods to deliver
@@ -199,7 +199,7 @@
 
 //               <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
 //                 Join thousands of learners who have already improved their English skills
-//                 with MayaQuest's AI-powered lessons and gamified learning experience.
+//                 with MayaCode-Quest's AI-powered lessons and gamified learning experience.
 //               </p>
 
 //               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4">
@@ -235,12 +235,12 @@
 //                 <span className="text-xs font-bold text-primary-foreground">M</span>
 //               </div>
 //               <span className="font-semibold text-foreground group-hover:scale-105 transition-transform">
-//                 MayaQuest
+//                 MayaCode-Quest
 //               </span>
 //             </div>
 
 //             <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-6 text-xs sm:text-sm text-muted-foreground gap-2 sm:gap-0">
-//               <span>© 2024 MayaQuest. All rights reserved.</span>
+//               <span>© 2024 MayaCode-Quest. All rights reserved.</span>
 //               <Button variant="link" size="sm" asChild>
 //                 <Link to="/app">Open App</Link>
 //               </Button>
@@ -313,7 +313,7 @@ const Landing = () => {
                 <span className="text-sm font-bold text-primary-foreground">M</span>
               </div>
               <span className="text-lg sm:text-xl font-bold text-foreground group-hover:scale-105 transition-transform">
-                MayaQuest
+                MayaCode-Quest
               </span>
             </div>
             <div className="flex items-center space-x-2 sm:space-x-4">
@@ -417,7 +417,7 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-              Why Choose MayaQuest?
+              Why Choose MayaCode-Quest?
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Advanced AI technology meets proven learning methods to deliver
@@ -457,7 +457,7 @@ const Landing = () => {
 
               <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
                 Join thousands of learners who have already improved their English skills
-                with MayaQuest's AI-powered lessons and gamified learning experience.
+                with MayaCode-Quest's AI-powered lessons and gamified learning experience.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4">
@@ -493,12 +493,12 @@ const Landing = () => {
                 <span className="text-xs font-bold text-primary-foreground">M</span>
               </div>
               <span className="font-semibold text-foreground group-hover:scale-105 transition-transform">
-                MayaQuest
+                MayaCode-Quest
               </span>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center space-x-0 sm:space-x-6 text-xs sm:text-sm text-muted-foreground gap-2 sm:gap-0">
-              <span>© 2024 MayaQuest. All rights reserved.</span>
+              <span>© 2024 MayaCode-Quest. All rights reserved.</span>
               <Button variant="link" size="sm" asChild>
                 <Link to="/app">Open App</Link>
               </Button>

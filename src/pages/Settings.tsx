@@ -19,9 +19,9 @@ const Settings: React.FC = () => {
 
   useEffect(() => {
     // Load saved settings
-    const savedApiKey = localStorage.getItem('mayaquest-openai-key');
-    const savedNotifications = localStorage.getItem('mayaquest-notifications');
-    const savedSoundEffects = localStorage.getItem('mayaquest-sound-effects');
+    const savedApiKey = localStorage.getItem('MayaCode-Quest-openai-key');
+    const savedNotifications = localStorage.getItem('MayaCode-Quest-notifications');
+    const savedSoundEffects = localStorage.getItem('MayaCode-Quest-sound-effects');
 
     if (savedApiKey) {
       setApiKey(savedApiKey);
@@ -40,13 +40,13 @@ const Settings: React.FC = () => {
     try {
       // Save API key
       if (apiKey) {
-        localStorage.setItem('mayaquest-openai-key', apiKey);
+        localStorage.setItem('MayaCode-Quest-openai-key', apiKey);
         alert("API Key Saved! OpenAI integration is now active for AI-powered lessons!");
       }
 
       // Save other settings
-      localStorage.setItem('mayaquest-notifications', notifications.toString());
-      localStorage.setItem('mayaquest-sound-effects', soundEffects.toString());
+      localStorage.setItem('MayaCode-Quest-notifications', notifications.toString());
+      localStorage.setItem('MayaCode-Quest-sound-effects', soundEffects.toString());
 
       alert("Settings saved successfully!");
     } catch (error) {
@@ -72,7 +72,7 @@ const Settings: React.FC = () => {
             <SettingsIcon className="w-8 h-8 text-primary" />
             <h1 className="text-3xl font-bold text-glass-foreground">{t('settings')}</h1>
           </div>
-          <p className="text-muted-foreground">Customize your MayaQuest learning experience</p>
+          <p className="text-muted-foreground">Customize your MayaCode-Quest learning experience</p>
         </div>
 
         <div className="space-y-6">

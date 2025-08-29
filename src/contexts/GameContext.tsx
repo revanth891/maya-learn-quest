@@ -77,7 +77,7 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Load saved game data
   useEffect(() => {
-    const savedData = localStorage.getItem('mayaquest-game-data');
+    const savedData = localStorage.getItem('MayaCode-Quest-game-data');
     if (savedData) {
       try {
         const data = JSON.parse(savedData);
@@ -99,7 +99,7 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       streak,
       achievements
     };
-    localStorage.setItem('mayaquest-game-data', JSON.stringify(gameData));
+    localStorage.setItem('MayaCode-Quest-game-data', JSON.stringify(gameData));
   }, [points, level, streak, achievements]);
 
   const addPoints = (amount: number) => {
@@ -124,7 +124,7 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const updateStreak = () => {
     const today = new Date().toDateString();
-    const lastActive = localStorage.getItem('mayaquest-last-active');
+    const lastActive = localStorage.getItem('MayaCode-Quest-last-active');
     
     if (lastActive === today) {
       return; // Already updated today
@@ -146,7 +146,7 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setStreak(1);
     }
     
-    localStorage.setItem('mayaquest-last-active', today);
+    localStorage.setItem('MayaCode-Quest-last-active', today);
   };
 
   const unlockAchievement = (achievementId: string) => {

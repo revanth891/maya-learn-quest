@@ -7,7 +7,7 @@ const Index = () => {
 
   useEffect(() => {
     // Check if user has selected a language
-    const savedLanguage = localStorage.getItem('mayaquest-language');
+    const savedLanguage = localStorage.getItem('MayaCode-Quest-language');
     if (!savedLanguage) {
       navigate('/language-select');
     }
