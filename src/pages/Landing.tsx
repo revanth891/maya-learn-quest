@@ -122,21 +122,15 @@ const Landing = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-20"></div>
-                <Card className="relative p-8 card-premium">
+                <Card className="relative p-4 card-premium w-[550px] h-[550px] lg:w-[650px] lg:h-[650px] flex items-center justify-center">
                   <Maya3D 
-                    height="400px" 
+                    height="100%" 
                     showMessage={true}
                     message="Hello! I'm Maya, your AI English tutor. Ready to start your learning journey?"
-                    className="animate-float"
+                    className="w-full h-full"
                   />
                 </Card>
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-surface-elevated border border-surface-border rounded-full px-4 py-2 shadow-md">
-                    <span className="text-sm font-medium text-foreground">
-                      Maya - Your AI Learning Companion
-                    </span>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
