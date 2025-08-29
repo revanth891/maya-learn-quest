@@ -259,7 +259,7 @@ const Navigation: React.FC = () => {
           pointer-events-none
         "
       >
-        <div className="pointer-events-auto glass backdrop-blur-xl border border-white/20 rounded-[28px] shadow-2xl shadow-black/20 px-2 py-1">
+        <div className="pointer-events-auto glass backdrop-blur-xl border border-white/20 rounded-[28px] shadow-2xl shadow-black/20 px-2 py-5">
           <div className="flex items-center justify-between">
             {navItems.map((item) => {
               const Icon = item.icon;
