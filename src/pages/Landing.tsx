@@ -389,7 +389,7 @@ const Landing = () => {
 
             {/* 3D Maya Showcase */}
             <div className="flex justify-center lg:justify-end mt-10 lg:mt-0">
-              <div className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px]">
+              <div className="relative w-[380px] h-[380px] sm:w-[400px] sm:h-[400px] lg:w-[550px] lg:h-[550px]">
                 <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-20"></div>
                 <Card className="relative p-2 sm:p-4 card-premium w-full h-full flex items-center justify-center">
                   <Maya3D

@@ -239,7 +239,7 @@ const Home: React.FC = () => {
 
     {/* Maya 3D */}
     <div className="flex justify-center lg:justify-end mt-6 lg:mt-0">
-      <Card className="relative p-2 sm:p-4 card-premium w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[550px] aspect-square flex items-center justify-center">
+      <Card className="relative p-2 sm:p-4 card-premium w-full max-w-[400px] sm:max-w-[400px] lg:max-w-[550px] aspect-square flex items-center justify-center">
         <Maya3D 
           height="100%" 
           showMessage={true}

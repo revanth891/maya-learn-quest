@@ -235,19 +235,6 @@ const Settings: React.FC = () => {
         </div>
 
         {/* Setup Instructions */}
-        <Card className="mt-8 p-6 bg-glass/10 backdrop-blur-sm border-glass-border">
-          <h3 className="text-lg font-semibold text-glass-foreground mb-4">
-            🚀 How to Set Up MayaQuest Offline
-          </h3>
-          <div className="space-y-3 text-sm text-muted-foreground">
-            <p><strong>1. Get OpenAI API Key:</strong> Visit <a href="https://platform.openai.com/api-keys" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a> and create a new API key</p>
-            <p><strong>2. Add API Key:</strong> Paste your API key in the field above and click "Save Settings"</p>
-            <p><strong>3. Clone Repository:</strong> <code className="bg-glass/20 px-2 py-1 rounded">git clone [your-repo-url]</code></p>
-            <p><strong>4. Install Dependencies:</strong> <code className="bg-glass/20 px-2 py-1 rounded">npm install</code></p>
-            <p><strong>5. Run Locally:</strong> <code className="bg-glass/20 px-2 py-1 rounded">npm run dev</code></p>
-            <p><strong>6. Access App:</strong> Open <code className="bg-glass/20 px-2 py-1 rounded">http://localhost:5173</code> in your browser</p>
-          </div>
-        </Card>
       </div>
 
       {/* Mobile padding */}
